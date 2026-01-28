@@ -1,15 +1,15 @@
-pipeline 
-{ 
-    agent 
-        any 
-    stages 
-    {     
-       stage('Test Webhook') 
-        { 
-            steps 
-            { 
-                echo "🎯 GitHub Webhook Triggered Successfully" 
-            } 
-        } 
-    } 
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Test Webhook') {
+            steps {
+                echo "🎯 GitHub Webhook Triggered Successfully"
+            }
+        }
+    }
 }
